@@ -1,13 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    background: rgb(87, 3, 3);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+    scroll-behavior: smooth !important;
+
+    transition: 1s;
+}
+
+.container {
+    max-width: 1400px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+}
+
+nav ul {
+    position: fixed;
+    top: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    z-index: 999;
+}
+
+nav ul li {
+    background: rgb(245, 134, 52);
+    padding: 10px 18px;
+    display: inline-block;
+    border-radius: 10px;
+    margin-left: 29px;
+
+}
+
+nav ul a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+.content {
+    position: relative;
+
+    display: flex;
+    color: white;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.menu-content {
+    width: 85%;
+}
+
+aside {
+    overflow: hidden;
+    position: fixed;
+    width: 23.5%;
+    background: rgb(245, 134, 52);
+    top: 1px;
+    right: 0px;
+    /*bottom: 0px;*/
+    height: 100%;
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    flex-direction: column;
+}
+
+
+section {
+    display: flex;
+    /*justify-content:center;*/
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+.menu-item {
+    width: 220px;
+    height: 420px;
+    margin-bottom: 20px;
+    color: white;
+    margin-left: 20px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu-item h1 {
+    margin-bottom: 0;
+}
+
+.menu-item img {
+    width: 100%;
+}
+
+.menu-item button {
+    width: 100%;
+    height: 50px!important;
+    background: rgb(245, 134, 52);
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 0 !important;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 30px;
+    font-size: 35px;
+    color: rgb(245, 134, 52);
+    text-transform: uppercase;
+}
+
+.logo {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside .logo img {
+    margin: 0;
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+aside {
+    text-transform: uppercase;
+    overflow-y: scroll;
+}
+
+.title-check {
+    border-bottom: 3px dashed white;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.check-product {
+    font-size: 14px;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.show:last-child{
+    margin-bottom: 20px;
+}
+.check-content {
+    width: 100%;
+}
+
+select {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 19px;
+    background: transparent;
+    color: white;
+    padding: 4px;
+    border: 3px rgb(87, 3, 3) dashed;
+    text-align: center;
+    outline: none;
+}
+
+select option {
+    background: rgb(245, 134, 52) !important;
+
+}
+
+.totalAndPay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 50px;
+}
+
+.error-msg {
+    position: fixed;
+    display: none;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    width: 60%;
+    /*height: 40px;*/
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    background: rgba(255, 0, 0, 0.7);
+}
+
+.totalAndPay span {
+    width: 100%
+}
+
+.totalAndPay button {
+    width: 90%;
+    height: 40px;
+    color: white;
+    font-size: 18px;
+    border: none;
+    background: rgb(87, 3, 3);
+    border-radius: 10px;
+}
+
+.show {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.show-left {
+    width: 100%;
+    text-align: center;
+}
+
+.stol {
+    width: 100% !important;
+    margin-bottom: 10px;
+}
+
+.show-right {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons input {
+    text-align: center;
+    width: 40%;
+    height: 20px;
+    font-size: 20px;
+}
+
+.buttons .btnPlus {
+
+    width: 30%;
+    height: 26px;
+    background: rgb(87, 3, 3);
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.buttons .btnMinus {  border-radius: 10px;
+    margin: 0 10px;
+    width: 30%;
+    height:26px;
+    background: rgb(87, 3, 3);
+    color: white;
+    font-size: 20px;
+
+}
+
+.remove, .remove button {
+    height: 50%;
+    width: 100%;
+}
+
+
+.show h1 {
+    margin: 0;
+}
+
+@media (orientation: landscape) {
+
+}
+
+@media (orientation: portrait) {
+    nav ul li {
+
+        margin-left: 5px;
+        padding: 10px 9px;
+
+    }
+
+    aside {
+        width: 32%;
+    }
+    .check-product{
+        height: 540px;
+    }
 }
